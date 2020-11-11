@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public float radius = 1f;
 
     public GameObject deathEffect;
+    public GameObject activationRadius;
     public Phobot phobotHit;
     public Transform phobotPosition;
 
@@ -24,6 +25,7 @@ public class Enemy : MonoBehaviour
         {
             phobotHit.TakeDamage(1);
             Destroy(gameObject);
+            activationRadius.SetActive(false);
         }
     }
 
@@ -40,11 +42,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
-    }
-
-    public void HitPhobot ()
-    {
-
+        activationRadius.SetActive(false);
     }
 
     public void OnDrawGizmos()
