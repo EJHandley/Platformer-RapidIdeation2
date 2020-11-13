@@ -39,7 +39,7 @@ public class Flashlight : MonoBehaviour
 
         if (hitInfo)
         {
-            Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
+            Enemy enemy = hitInfo.collider.GetComponent<Enemy>();
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
