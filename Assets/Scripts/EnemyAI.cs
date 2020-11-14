@@ -5,7 +5,7 @@ public class EnemyAI : MonoBehaviour
 {
     public Transform target;
 
-    public float speed = 200f;
+    public float speed = 40f;
     public float nextWaypointDistance = 3f;
 
     Path path;
@@ -42,7 +42,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(path == null)
             return;
@@ -58,7 +58,7 @@ public class EnemyAI : MonoBehaviour
         }
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector2 force = direction * speed * Time.deltaTime;
+        Vector2 force = direction * speed * Time.fixedDeltaTime;
 
         rb.AddForce(force);
 
