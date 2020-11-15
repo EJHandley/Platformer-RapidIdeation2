@@ -4,38 +4,26 @@ using UnityEngine;
 
 public class Phobot : MonoBehaviour
 {
-    public int health = 3;
-    public float radius = 1f;
-    public GameObject thirdHeart;
-    public GameObject secondHeart;
-    public GameObject firstHeart;
+    public int maxFear = 100;
+    public int currentFear;
+
+    public FearBar fearBar;
 
     public Animator animator;
 
-    public void Awake()
+    public void Start()
     {
-        thirdHeart = GameObject.Find("ThirdHeart");
-        secondHeart = GameObject.Find("SecondHeart");
-        firstHeart = GameObject.Find("FirstHeart");
+        currentFear = 0;
     }
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        currentFear += damage;
 
-        if (health == 2)
-        {
-            Destroy(thirdHeart);
-        }
+        fearBar.SetFear(currentFear);
 
-        if (health == 1)
+        if (currentFear >= 100)
         {
-            Destroy(secondHeart);
-        }
-
-        if (health <= 0)
-        {
-            Destroy(firstHeart);
             Die();
         }
     }
@@ -48,11 +36,5 @@ public class Phobot : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
-    }
-
-    public void OnDrawGizmos()
-    {
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }
