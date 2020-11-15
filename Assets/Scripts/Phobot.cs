@@ -10,6 +10,8 @@ public class Phobot : MonoBehaviour
     public GameObject secondHeart;
     public GameObject firstHeart;
 
+    public Animator animator;
+
     public void Awake()
     {
         thirdHeart = GameObject.Find("ThirdHeart");
@@ -36,6 +38,11 @@ public class Phobot : MonoBehaviour
             Destroy(firstHeart);
             Die();
         }
+    }
+
+    public void Afraid()
+    {
+        animator.SetTrigger("OnHit");
     }
 
     void Die()

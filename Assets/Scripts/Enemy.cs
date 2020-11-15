@@ -9,13 +9,14 @@ public class Enemy : MonoBehaviour
 
     public GameObject deathEffect;
     public GameObject activationRadius;
-    public Phobot phobotHit;
+
+    public Phobot phobot;
     public Transform phobotPosition;
 
     public void Awake()
     {
         phobotPosition = GameObject.Find("Phobot").transform;
-        phobotHit = GameObject.Find("Phobot").GetComponent<Phobot>();
+        phobot = GameObject.Find("Phobot").GetComponent<Phobot>();
     }
 
     void Update()
@@ -23,10 +24,16 @@ public class Enemy : MonoBehaviour
         float phobotDistance = Vector2.Distance(phobotPosition.position, transform.position);
         if (phobotDistance <= radius)
         {
-            phobotHit.TakeDamage(1);
-            Destroy(gameObject);
-            activationRadius.SetActive(false);
+            Attack();
         }
+    }
+
+    void Attack()
+    {
+        phobot.TakeDamage(1);
+        phobot.Afraid();
+        Destroy(gameObject);
+        activationRadius.SetActive(false);
     }
 
     public void TakeDamage (int damage)

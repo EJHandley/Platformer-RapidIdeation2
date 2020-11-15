@@ -4,6 +4,7 @@ using Pathfinding;
 public class EnemyAI : MonoBehaviour
 {
     public Transform target;
+    public Transform enemyGFX;
 
     public float speed = 40f;
     public float nextWaypointDistance = 3f;
@@ -67,6 +68,15 @@ public class EnemyAI : MonoBehaviour
         if(distance < nextWaypointDistance)
         {
             currentWaypoint++;
+        }
+
+        if(rb.velocity.x >= 0.01f)
+        {
+            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+        }
+        else if(rb.velocity.x <= -0.01f)
+        {
+            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
         }
     }
 }

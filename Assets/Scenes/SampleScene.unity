@@ -895,8 +895,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140489011}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.10000153, y: 0.39899996, z: 0}
-  m_LocalScale: {x: 0.44093204, y: 0.44093212, z: 0.440932}
+  m_LocalPosition: {x: -0.17, y: 0.33, z: 0}
+  m_LocalScale: {x: 0.49278247, y: 0.49278247, z: 0}
   m_Children: []
   m_Father: {fileID: 2143078854}
   m_RootOrder: 0
@@ -2923,7 +2923,7 @@ Transform:
   m_Children:
   - {fileID: 1858831336}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &439973615
 GameObject:
@@ -3534,7 +3534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &499082180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3551,7 +3551,7 @@ MonoBehaviour:
   radius: 2
   deathEffect: {fileID: 0}
   activationRadius: {fileID: 1560409077}
-  phobotHit: {fileID: 615829792}
+  phobot: {fileID: 615829792}
   phobotPosition: {fileID: 615829785}
 --- !u!114 &499082181
 MonoBehaviour:
@@ -3566,6 +3566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 615829785}
+  enemyGFX: {fileID: 1548928005}
   speed: 400
   nextWaypointDistance: 1
 --- !u!114 &499082182
@@ -3766,7 +3767,7 @@ Transform:
   - {fileID: 752679214}
   - {fileID: 212331759}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &526486750
 GameObject:
@@ -4412,7 +4413,6 @@ Transform:
   - {fileID: 330143174}
   - {fileID: 1414952537}
   - {fileID: 986673704}
-  - {fileID: 2143078854}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4555,6 +4555,7 @@ MonoBehaviour:
   thirdHeart: {fileID: 0}
   secondHeart: {fileID: 0}
   firstHeart: {fileID: 0}
+  animator: {fileID: 986673702}
 --- !u!1 &631889811
 GameObject:
   m_ObjectHideFlags: 0
@@ -4724,6 +4725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 615829785}
+  enemyGFX: {fileID: 1834128891}
   speed: 400
   nextWaypointDistance: 1
 --- !u!114 &661157058
@@ -4822,7 +4824,7 @@ MonoBehaviour:
   radius: 2
   deathEffect: {fileID: 0}
   activationRadius: {fileID: 1702303574}
-  phobotHit: {fileID: 615829792}
+  phobot: {fileID: 0}
   phobotPosition: {fileID: 615829785}
 --- !u!1 &678928539
 GameObject:
@@ -4943,7 +4945,7 @@ MonoBehaviour:
   radius: 5
   deathEffect: {fileID: 0}
   activationRadius: {fileID: 1470019930}
-  phobotHit: {fileID: 615829792}
+  phobot: {fileID: 0}
   phobotPosition: {fileID: 615829785}
 --- !u!114 &682009408
 MonoBehaviour:
@@ -4958,6 +4960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 615829785}
+  enemyGFX: {fileID: 1126266840}
   speed: 400
   nextWaypointDistance: 1
 --- !u!114 &682009409
@@ -5399,7 +5402,7 @@ Transform:
   - {fileID: 1802651341}
   - {fileID: 1816234288}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &739471149
 GameObject:
@@ -5809,7 +5812,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &810578233
 GameObject:
@@ -19422,8 +19425,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986673701}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.29, z: 0}
-  m_LocalScale: {x: 0.23330016, y: 0.26508752, z: 0.1759248}
+  m_LocalPosition: {x: 0.03, y: -0.11, z: 0}
+  m_LocalScale: {x: 0.27211985, y: 0.30919644, z: 0.20519759}
   m_Children: []
   m_Father: {fileID: 615829785}
   m_RootOrder: 3
@@ -19951,7 +19954,7 @@ Transform:
   - {fileID: 879769700}
   - {fileID: 1743144702}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1059295241
 GameObject:
@@ -24205,7 +24208,7 @@ MonoBehaviour:
   radius: 2
   deathEffect: {fileID: 0}
   activationRadius: {fileID: 150901574}
-  phobotHit: {fileID: 615829792}
+  phobot: {fileID: 0}
   phobotPosition: {fileID: 615829785}
 --- !u!114 &1716997486
 MonoBehaviour:
@@ -24220,6 +24223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 615829785}
+  enemyGFX: {fileID: 2012668223}
   speed: 400
   nextWaypointDistance: 1
 --- !u!114 &1716997487
@@ -25899,7 +25903,7 @@ MonoBehaviour:
   radius: 2
   deathEffect: {fileID: 0}
   activationRadius: {fileID: 2045599173}
-  phobotHit: {fileID: 615829792}
+  phobot: {fileID: 0}
   phobotPosition: {fileID: 615829785}
 --- !u!114 &1861183496
 MonoBehaviour:
@@ -25914,6 +25918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 615829785}
+  enemyGFX: {fileID: 862375239}
   speed: 400
   nextWaypointDistance: 1
 --- !u!114 &1861183497
@@ -28131,7 +28136,7 @@ Transform:
   - {fileID: 526486751}
   - {fileID: 1059295242}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2101725741
 GameObject:
@@ -28635,7 +28640,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2143078854}
   - component: {fileID: 2143078855}
-  - component: {fileID: 2143078856}
+  - component: {fileID: 2143078853}
   - component: {fileID: 2143078852}
   - component: {fileID: 2143078851}
   m_Layer: 0
@@ -28658,6 +28663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 615829785}
+  enemyGFX: {fileID: 0}
   speed: 300
   nextWaypointDistance: 2
 --- !u!114 &2143078852
@@ -28688,6 +28694,22 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!70 &2143078853
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143078850}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.1, y: 0.3}
+  m_Size: {x: 1, y: 3}
+  m_Direction: 0
 --- !u!4 &2143078854
 Transform:
   m_ObjectHideFlags: 0
@@ -28696,12 +28718,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143078850}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.4259028, y: -0.5468672, z: 0}
-  m_LocalScale: {x: 0.77939516, y: 0.8855885, z: 0.587719}
+  m_LocalPosition: {x: -81.738, y: -0.25799996, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 140489014}
-  m_Father: {fileID: 615829785}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2143078855
 Rigidbody2D:
@@ -28724,19 +28746,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &2143078856
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143078850}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.06924016, y: -0.04220951}
-  serializedVersion: 2
-  m_Radius: 0.74527353
