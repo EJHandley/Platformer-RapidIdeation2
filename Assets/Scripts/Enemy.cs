@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int health = 1;
+    public int health = 25;
     public float attackRange = 0.5f;
     public float shadowRadius = 1f;
 
@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
         animator.SetTrigger("Attack");
 
         //Attack Phobot
-        phobot.TakeDamage(25);
+        phobot.TakeDamage(20);
         phobot.Afraid();
 
         //Die

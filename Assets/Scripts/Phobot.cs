@@ -11,6 +11,8 @@ public class Phobot : MonoBehaviour
 
     public Animator animator;
 
+    public GameObject youDiedUI;
+
     public void Start()
     {
         currentFear = 0;
@@ -22,7 +24,7 @@ public class Phobot : MonoBehaviour
 
         fearBar.SetFear(currentFear);
 
-        if (currentFear >= 100)
+        if (currentFear >= maxFear)
         {
             Die();
         }
@@ -36,5 +38,11 @@ public class Phobot : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+        YouDied();
+    }
+
+    void YouDied()
+    {
+        youDiedUI.SetActive(true);
     }
 }

@@ -72,11 +72,11 @@ public class EnemyAI : MonoBehaviour
 
         if(rb.velocity.x >= 0.01f)
         {
-            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+            enemyGFX.localScale = new Vector3(-2f, 2f, 2f);
         }
         else if(rb.velocity.x <= -0.01f)
         {
-            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+            enemyGFX.localScale = new Vector3(2f, 2f, 2f);
         }
     }
 }

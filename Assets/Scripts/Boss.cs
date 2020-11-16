@@ -4,31 +4,53 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    public int health = 1;
-    public float attackRange = 0.5f;
+    public Vector3 startPosition;
+
+    public int maxHealth = 100;
+    public int currentHealth;
+    public float spikeAttackRange = 0.5f;
+    public float tailAttackRange = 0.5f;
     public float shadowRadius = 1f;
+
+    public BossHealthBar bossHealthBar;
 
     public GameObject deathEffect;
     public GameObject activationRadius;
+    public GameObject youWinUI;
 
     public Phobot phobot;
-    public Transform attackPoint;
+    public Transform spikeAttack;
+    public Transform tailAttack;
     public Transform shadow;
+    public Transform boss;
+
     public Animator animator;
 
     public LayerMask playerLayer;
     public LayerMask lightLayer;
 
-    public void Awake()
+    public void Start()
     {
         phobot = GameObject.Find("Phobot").GetComponent<Phobot>();
+
+        currentHealth = maxHealth;
+        bossHealthBar.SetMaxHealth(maxHealth);
+
+        startPosition = boss.position;
     }
 
     void Update()
     {
-        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
+        Collider2D[] hitPlayerWithSpike = Physics2D.OverlapCircleAll(spikeAttack.position, spikeAttackRange, playerLayer);
 
-        foreach (Collider2D player in hitPlayer)
+        foreach (Collider2D player in hitPlayerWithSpike)
+        {
+            Attack();
+        }
+
+        Collider2D[] hitPlayerWithTail = Physics2D.OverlapCircleAll(tailAttack.position, tailAttackRange, playerLayer);
+
+        foreach (Collider2D player in hitPlayerWithTail)
         {
             Attack();
         }
@@ -47,18 +69,22 @@ public class Boss : MonoBehaviour
         animator.SetTrigger("Attack");
 
         //Attack Phobot
-        phobot.TakeDamage(25);
+        phobot.TakeDamage(35);
         phobot.Afraid();
 
-        //Die
-        Die();
+        //Move Back
+        boss.position = startPosition;
     }
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        currentHealth -= damage;
 
-        if (health <= 0)
+        bossHealthBar.SetHealth(currentHealth);
+
+        boss.position = startPosition;
+
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -66,8 +92,14 @@ public class Boss : MonoBehaviour
 
     void Die()
     {
+        YouWin();
         Destroy(gameObject);
         activationRadius.SetActive(false);
+    }
+
+    void YouWin()
+    {
+        youWinUI.SetActive(true);
     }
 
     public void OnDrawGizmos()

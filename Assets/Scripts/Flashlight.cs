@@ -5,7 +5,7 @@ using UnityEngine;
 public class Flashlight : MonoBehaviour
 {
     public Transform firePoint;
-    public int damage = 1;
+    public int damage = 25;
 
     public GameObject thirdEnergy;
     public GameObject secondEnergy;
@@ -43,6 +43,10 @@ public class Flashlight : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
+            }
+            Boss boss = hitInfo.transform.GetComponent<Boss>();
+            {
+                boss.TakeDamage(damage);
             }
         }
     }
