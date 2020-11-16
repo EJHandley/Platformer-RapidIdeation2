@@ -9011,14 +9011,16 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0, z: 0}
   maxHealth: 100
   currentHealth: 0
-  attackRange: 1.5
+  spikeAttackRange: 0.5
+  tailAttackRange: 0.5
   shadowRadius: 1
   bossHealthBar: {fileID: 1993636016}
   deathEffect: {fileID: 0}
   activationRadius: {fileID: 1470019930}
   youWinUI: {fileID: 1038491539}
   phobot: {fileID: 615829792}
-  attackPoint: {fileID: 722020956}
+  spikeAttack: {fileID: 722020956}
+  tailAttack: {fileID: 46661608}
   shadow: {fileID: 0}
   boss: {fileID: 682009412}
   animator: {fileID: 1126266841}
