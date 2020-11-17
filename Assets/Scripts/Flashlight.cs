@@ -5,49 +5,31 @@ using UnityEngine;
 public class Flashlight : MonoBehaviour
 {
     public Transform firePoint;
-    public int damage = 25;
-
-    public GameObject thirdEnergy;
-    public GameObject secondEnergy;
-    public GameObject firstEnergy;
+    public GameObject lanternLight;
 
      void Update()
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            if(thirdEnergy.activeSelf == true)
+            if (lanternLight.activeSelf == false)
             {
-                thirdEnergy.SetActive(false);
-                Shoot();
+                TurnOn();
             }
-            else if(thirdEnergy.activeSelf == false && secondEnergy.activeSelf == true)
+            else if (lanternLight.activeSelf == true)
             {
-                secondEnergy.SetActive(false);
-                Shoot();
+                TurnOff();
             }
-            else if(thirdEnergy.activeSelf == false && secondEnergy.activeSelf == false && firstEnergy.activeSelf == true)
-            {
-                firstEnergy.SetActive(false);
-                Shoot();
-            }
+            Debug.Log("You Pressed E");
         }
     }
 
-    void Shoot ()
+    void TurnOn()
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, firePoint.right);
+        lanternLight.SetActive(true);
+    }
 
-        if (hitInfo)
-        {
-            Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(damage);
-            }
-            Boss boss = hitInfo.transform.GetComponent<Boss>();
-            {
-                boss.TakeDamage(damage);
-            }
-        }
+    void TurnOff()
+    {
+        lanternLight.SetActive(false);
     }
 }
