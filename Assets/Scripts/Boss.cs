@@ -107,5 +107,6 @@ public class Boss : MonoBehaviour
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(tailAttack.position, tailAttackRange);
         Gizmos.DrawWireSphere(spikeAttack.position, spikeAttackRange);
+        Gizmos.DrawWireSphere(shadow.position, shadowRadius);
     }
 }

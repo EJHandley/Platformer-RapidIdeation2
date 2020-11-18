@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
 
         foreach (Collider2D light in hitLight)
         {
-            Die();
+            TakeDamage(25);
         }
     }
 
